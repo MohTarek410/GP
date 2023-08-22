@@ -64,98 +64,100 @@ class SingInScreen extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40))),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 250,
-                        width: MediaQuery
-                            .of(context)
-                            .size
-                            .width * 0.8,
-                        margin: EdgeInsets.only(
-                            left: MediaQuery
-                                .of(context)
-                                .size
-                                .width * 0.09),
-                        child: Image.asset("assets/images/moqawel.png"),
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      CustomFormField(
-                        headingText: "رقم الهاتف  ",
-                        hintText: "رقم التليفون",
-                        obsecureText: false,
-                        suffixIcon: IconButton(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 250,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.8,
+                          margin: EdgeInsets.only(
+                              left: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.09),
+                          child: Image.asset("assets/images/moqawel.png"),
+                        ),
+                        const SizedBox(
+                          height: 24,
+                        ),
+                        CustomFormField(
+                          headingText: "رقم الهاتف  ",
+                          hintText: "رقم التليفون",
+                          obsecureText: false,
+                          suffixIcon: IconButton(
+                              color: AppColors.yellow,
+
+                              icon: const Icon(Icons.phone),
+                              onPressed: () {}),
+                          controller: _emailController,
+                          maxLines: 1,
+                          textInputAction: TextInputAction.done,
+                          textInputType: TextInputType.phone,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        CustomFormField(
+
+                          headingText: "كلمه السر  ",
+                          maxLines: 1,
+                          textInputAction: TextInputAction.done,
+                          textInputType: TextInputType.text,
+                          hintText: " ",
+                          obsecureText: true,
+                          suffixIcon: IconButton(
                             color: AppColors.yellow,
+                              icon: const Icon(Icons.visibility_off
 
-                            icon: const Icon(Icons.phone),
-                            onPressed: () {}),
-                        controller: _emailController,
-                        maxLines: 1,
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.phone,
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      CustomFormField(
+                              ),
+                              onPressed: (
 
-                        headingText: "كلمه السر  ",
-                        maxLines: 1,
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.text,
-                        hintText: " ",
-                        obsecureText: true,
-                        suffixIcon: IconButton(
-                          color: AppColors.yellow,
-                            icon: const Icon(Icons.visibility_off
-
-                            ),
-                            onPressed: (
-
-                                ) {}),
-                        controller: _passwordController,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 16, horizontal: 24),
-                            child: InkWell(
-                              onTap: () {},
-                              child: Text(
-                                "هل نسيت كلمه السر ؟",
-                                style: TextStyle(
-                                    color: AppColors.black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w900),
+                                  ) {}),
+                          controller: _passwordController,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 16, horizontal: 24),
+                              child: InkWell(
+                                onTap: () {},
+                                child: Text(
+                                  "هل نسيت كلمه السر ؟",
+                                  style: TextStyle(
+                                      color: AppColors.black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w900),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      AuthButton(
-                        onTap: () {},
-                        text: 'تسجيل الدخول',
-                      ),
-                      Row(
-                        crossAxisAlignment : CrossAxisAlignment.center,
-                        children: [
-                          CustomRichText(
-                            discription: "لا امتلك حساب؟",
-                            text: "  تسجيل جديد",
-                            onTap: () {
-                              Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>  SignUpScreen()));
-                            },
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                        AuthButton(
+                          onTap: () {},
+                          text: 'تسجيل الدخول',
+                        ),
+                        Row(
+                          crossAxisAlignment : CrossAxisAlignment.center,
+                          children: [
+                            CustomRichText(
+                              discription: "لا امتلك حساب؟",
+                              text: "  تسجيل جديد",
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>  SignUpScreen()));
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

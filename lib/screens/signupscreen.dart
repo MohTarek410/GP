@@ -68,6 +68,21 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16),
                       CustomFormField(
+                        maxLines: 1,
+                        textInputAction: TextInputAction.done,
+                        textInputType: TextInputType.text,
+                        controller: _userName,
+                        headingText: "الاسم",
+                        hintText: "برجاء كتابه الاسم ثلاثي ",
+                        obsecureText: true,
+                        suffixIcon: IconButton(
+                          color: AppColors.yellow,
+                          icon: Icon(Icons.account_circle_outlined),
+                          onPressed: () {},
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      CustomFormField(
                         headingText: "رقم الهاتف  ",
                         hintText: "رقم التليفون",
                         obsecureText: false,
